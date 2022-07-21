@@ -4,7 +4,7 @@ import clsx from 'clsx';
 import Link from 'next/link';
 import { IconButton } from '../Button';
 import Logo from '../Logo';
-export default function MenuPopOver({ className, display, navMenu}) {
+export default function MenuPopOver({ className, display, navMenu}: any) {
   let [isOpen, setIsOpen] = useState(false);
   return (
     <div className={clsx(className, display)}>
