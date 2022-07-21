@@ -9,7 +9,13 @@ import { Swiper, SwiperSlide } from "swiper/react";
 interface propsBidang {
   title : string,
   slug : string,
-  member : {}
+  member : {
+    nama: string,
+    jabatan: string,
+    image: string,
+    intagramLink: string,
+    facebookLink: string,
+  }[],
 }
 
 export const Bidang = (props : propsBidang) => {
@@ -156,131 +162,7 @@ export const Bidang = (props : propsBidang) => {
         <h2 className="text-2xl font-bold uppercase">{title}</h2>
       </div>
       <div id={`struktur-bemfak__${slug}`} className="!-m-4">
-        <Swiper
-          className="!p-4" // !p-4 to fix box-shadow cropping due to overflow:hidden
-          modules={[Navigation]}
-          navigation
-          spaceBetween={20}
-          slidesPerView={1}
-          breakpoints={{
-            "475": {
-              slidesPerView: 1,
-            },
-            "640": {
-              slidesPerView: 2,
-            },
-            "1024": {
-              slidesPerView: 3,
-            },
-          }}
-        >
-          {member.map((item, i) => (
-            <SwiperSlide key={i}>
-              <Link href={`struktur-kepengurusan#struktur-bemfak__${slug}`} key={i}>
-                <a className="group block overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-md transition-all duration-150 hover:-translate-y-1 hover:shadow-lg dark:border-slate-800 dark:bg-slate-700">
-                  <div className="relative block overflow-hidden pt-[70%] md:h-[300px] lg:h-[500px]">
-                    <Image
-                      src={item.image}
-                      alt={item.nama}
-                      layout="fill"
-                      objectFit="cover"
-                      className="transition-all duration-200 group-hover:scale-[102%]"
-                    />
-                  </div>
-
-                  <div className="relative flex flex-col border-t p-4 dark:border-slate-600 text-center">
-                    <span className="absolute right-4 -top-[65px] block h-[80px] w-[80px] overflow-hidden rounded-lg shadow-sm">
-                      <div className="relative block overflow-hidden  bg-transparent pt-[100%]">
-                        <Image
-                          src="/img/Logo.png"
-                          alt="Logo Bemfak Saintek"
-                          layout="fill"
-                          objectFit="cover"
-                        />
-                      </div>
-                    </span>
-
-                    <h5 className="block truncate text-xl font-semibold capitalize">
-                      {item.nama}
-                    </h5>
-                    <span className="block truncate text-slate-500 dark:text-slate-400">
-                      {item.jabatan}
-                    </span>
-                    <span className="flex justify-center my-4">
-                      <a
-                        href='https://instagram.com/'
-                        aria-label={`ig profile`}
-                        className="transition-all duration-150 hover:fill-indigo-800 dark:fill-white dark:hover:fill-indigo-800"
-                        >
-                        <InstagramIcon height={40} width={40} />
-                      </a>
-                      <a
-                        href='https://instagram.com/'
-                        aria-label={`ig profile`}
-                        className="transition-all duration-150 hover:fill-indigo-800 dark:fill-white dark:hover:fill-indigo-800"
-                        >
-                        <FacebookIcon height={40} width={40} />
-                      </a>
-                    </span>
-                  </div>
-                </a>
-              </Link>
-            </SwiperSlide>
-          ))}
-          {/* {topCompaniesItems.map((item, i) => (
-            <SwiperSlide key={i}>
-              <Link href="#" key={i}>
-                <a className="group block overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-md transition-all duration-150 hover:-translate-y-1 hover:shadow-lg dark:border-slate-800 dark:bg-slate-700">
-                  <div className="relative block overflow-hidden pt-[70%] md:h-[300px] lg:h-[500px]">
-                    <Image
-                      src={item.image}
-                      alt={item.companyName}
-                      layout="fill"
-                      objectFit="cover"
-                      className="transition-all duration-200 group-hover:scale-[102%]"
-                    />
-                  </div>
-
-                  <div className="relative flex flex-col border-t p-4 dark:border-slate-600">
-                    <span className="absolute right-4 -top-[65px] block h-[80px] w-[80px] overflow-hidden rounded-lg shadow-sm">
-                      <div className="relative block overflow-hidden  bg-transparent pt-[100%]">
-                        <Image
-                          src="/img/Logo.png"
-                          alt={item.companyName}
-                          layout="fill"
-                          objectFit="cover"
-                        />
-                      </div>
-                    </span>
-
-                    <h5 className="block truncate text-xl font-semibold capitalize">
-                      {item.companyName}
-                    </h5>
-                    <span className="block truncate text-slate-500 dark:text-slate-400">
-                      {item.category}
-                    </span>
-                    <span className="flex justify-center my-4">
-                      <a
-                        href='https://instagram.com/'
-                        aria-label={`ig profile`}
-                        className="transition-all duration-150 hover:fill-indigo-800 dark:fill-white dark:hover:fill-indigo-800"
-                        >
-                        <InstagramIcon height={40} width={40} />
-                      </a>
-                      <a
-                        href='https://instagram.com/'
-                        aria-label={`ig profile`}
-                        className="transition-all duration-150 hover:fill-indigo-800 dark:fill-white dark:hover:fill-indigo-800"
-                        >
-                        <FacebookIcon height={40} width={40} />
-                      </a>
-                    </span>
-                  </div>
-                </a>
-              </Link>
-            </SwiperSlide>
-          ))} */}
-        </Swiper>
+        
       </div>
     </>
   );
