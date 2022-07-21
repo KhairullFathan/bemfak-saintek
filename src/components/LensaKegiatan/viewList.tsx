@@ -66,7 +66,7 @@ export default function ViewList() {
         <h2 className="text-2xl font-bold uppercase">Lensa Kegiatan</h2>
       </div>
       {/* !-m-4 to fix box-shadow cropping due to overflow:hidden */}
-      <div id="lensa-kegiatan__items" className="grid grid-cols-4 gap-10">
+      <div id="lensa-kegiatan__items" className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
         {Item.map((item, i) => (
           <SwiperSlide key={i}>
             <Link href="/#">

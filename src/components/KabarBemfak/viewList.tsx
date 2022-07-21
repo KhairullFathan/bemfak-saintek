@@ -60,7 +60,7 @@ export default function ViewList() {
         <h2 className="text-2xl font-bold uppercase">Kabar Bemfak</h2>
       </div>
       {/* !-m-4 to fix box-shadow cropping due to overflow:hidden */}
-      <div id="kabar-bemfak__items" className="grid grid-cols-4 gap-10">
+      <div id="kabar-bemfak__items" className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
         {Item.map((item, i) => (
           <Link href="/#">
             <a className="group block overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-md transition-all duration-150 hover:-translate-y-1 hover:shadow-lg dark:border-slate-800 dark:bg-slate-700">
