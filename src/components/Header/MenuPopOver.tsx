@@ -55,7 +55,7 @@ export default function MenuPopOver({ className, display, navMenu}: any) {
               <Logo />
             </a>
             <ul className='mt-8 space-y-3'>
-              {navMenu.map((item) => {
+              {navMenu.map((item:any) => {
                 {
                   return (
                     <li className='group relative flex h-9 items-center overflow-hidden rounded-md hover:bg-slate-200/50'>
