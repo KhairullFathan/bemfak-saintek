@@ -9,7 +9,13 @@ import { Swiper, SwiperSlide } from "swiper/react";
 interface propsBidang {
   title : string,
   slug : string,
-  member : Object,
+  member : {
+    nama: string,
+    jabatan: string,
+    image: string,
+    intagramLink: string,
+    facebookLink: string,
+  }[],
 }
 
 export const Bidang = (props : propsBidang) => {
